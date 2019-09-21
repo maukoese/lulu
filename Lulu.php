@@ -1,26 +1,24 @@
 <?php
 class Lulu
 {
-function __construct()
+    protected $AccountNo; // Automatically assigned when you register on www.lulusms.com
+    protected $UserName; //  Mobile Number used to register on @ www.lulusms.com
+    protected $Password; // Your PAssword on www.lulusms.com
+    
+function __construct($AccountNo, $UserName, $Password)
 {
+    $this->$AccountNo = $AccountNo;
+    $this->$UserName = $UserName;
+    $this->$Password = $Password;
 }
 
-function send()
+function sms($To , $SMS, $From = 'lulusms.com')
 {
-// Sets our destination URL
-
-    $AccountNo = XXX ;             // Automatically assigned when you register on www.lulusms.com
-    $UserName  = '072XXXXX' ;     //  Mobile Number used to register on @ www.lulusms.com
-    $Password  = '*****';          // Your PAssword on www.lulusms.com
-    $From      = 'lulusms.com';     // Can change to your alpha numeric short code when assigned
-    $To        = '254XXXXXX';    // Mobile number of receipient, format 254XX... or 07XX....
-    $SMS       = "Hello World " ;   // Message to be sent out to customer
-
     // Creates our data array that we want to post to the endpoint
     $data_to_post = [
-     'AccountNo' => $AccountNo,
-     'UserName' => $UserName,  
-     'Password' => $Password ,  
+     'AccountNo' => $this->AccountNo,
+     'UserName' => $this->UserName,  
+     'Password' => $this->Password ,  
      'To' => $To ,  
      'SMS' => $SMS,
      'From' => $From ,
