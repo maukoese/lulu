@@ -1,9 +1,4 @@
-<?php
-class Lulu
-{
-    protected $AccountNo; // Automatically assigned when you register on www.lulusms.com
-    protected $UserName; //  Mobile Number used to register on @ www.lulusms.com
-    protected $Password; // Your PAssword on www.lulusms.com
+ssword on www.lulusms.com
     
 function __construct($AccountNo, $UserName, $Password)
 {
